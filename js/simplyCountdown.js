@@ -115,9 +115,9 @@
      */
     simplyCountdown = function (elt, args) {
         var parameters = extend({
-                year: 2015,
-                month: 6,
-                day: 28,
+                year: 2023,
+                month: 10,
+                day: 18,
                 hours: 0,
                 minutes: 0,
                 seconds: 0,
@@ -149,6 +149,7 @@
             seconds,
             cd = document.querySelectorAll(elt);
 
+        debugger
         targetTmpDate = new Date(
             parameters.year,
             parameters.month - 1,
@@ -174,13 +175,13 @@
         Array.prototype.forEach.call(cd, function (countdown) {
             var fullCountDown = createElements(parameters, countdown),
                 refresh;
-
             refresh = function () {
                 var dayWord,
                     hourWord,
                     minuteWord,
                     secondWord;
 
+                debugger
                 now = new Date();
                 if (parameters.enableUtc) {
                     nowUtc = new Date(now.getFullYear(), now.getMonth(), now.getDate(),
@@ -203,6 +204,8 @@
 						break;
 					}
 				}
+                // if(nuiyear===0)
+                //     nuiyear = 1;
 				
 				var dtemp = new Date(targetDate.getTime());
 				dtemp = new Date(parameters.year + nuiyear,
